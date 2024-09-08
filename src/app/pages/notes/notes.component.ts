@@ -25,7 +25,7 @@ export class NotesComponent {
     addNote(): void {
         const value = this.newNote.trim();
         if (Boolean(value)) {
-            this.notesService.addNote({ text: value, date: new Date().toISOString() });
+            this.notesService.addNote({ text: value.replaceAll(/\n/g, '<br/>'), date: new Date().toISOString() });
             this.newNote = '';
         }
     }
