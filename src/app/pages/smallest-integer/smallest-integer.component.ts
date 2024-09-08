@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-smallest-integer',
-  standalone: true,
-  imports: [],
-  templateUrl: './smallest-integer.component.html',
-  styleUrl: './smallest-integer.component.scss'
+    selector: 'app-smallest-integer',
+    standalone: true,
+    imports: [],
+    templateUrl: './smallest-integer.component.html',
+    styleUrl: './smallest-integer.component.scss'
 })
 export class SmallestIntegerComponent implements OnInit {
 
@@ -22,7 +22,20 @@ export class SmallestIntegerComponent implements OnInit {
      * Write your code inside this function
      */
     smallestMissingInt(A: number[]): number {
-        return 1;
+        const numSet = new Set();
+
+        for (const value of A) {
+            if (value > 0) {
+                numSet.add(value);
+            }
+        }
+
+        let smallest = 1;
+        while (numSet.has(smallest)) {
+            smallest++;
+        }
+
+        return smallest;
     }
 
     /**
