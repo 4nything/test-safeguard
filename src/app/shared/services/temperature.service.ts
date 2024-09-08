@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { TemperatureResponse } from "../types/temperatures";
+import { ITemperatureResponse } from "../types/temperatures";
 import { interval, Observable, startWith, switchMap } from "rxjs";
 
 @Injectable({
@@ -13,11 +13,11 @@ export class TemperatureService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTemperature(lat: number, lon: number): Observable<TemperatureResponse> {
+  getTemperature(lat: number, lon: number): Observable<ITemperatureResponse> {
     return interval(30000).pipe(
       startWith(0),  // Esto asegura que se haga la llamada inmediatamente
       switchMap(() =>
-        this.httpClient.get<TemperatureResponse>(`${this._baseUrl}`, {
+        this.httpClient.get<ITemperatureResponse>(`${this._baseUrl}`, {
           params: {
             lat: lat.toString(),
             lon: lon.toString(),

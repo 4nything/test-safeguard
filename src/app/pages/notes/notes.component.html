@@ -1,6 +1,20 @@
 <div class="small-page">
     <h1>Create a Notes Component</h1>
-    <p>Using the <code>NotesComponent</code>, create a place to add a new note, as well as view other notes that have been created.
-        In this task we'd like you to show off your creativity and design skills, so bonus points for extra features or out-of-the-box ideas.</p>
+    <p>Using the <code>NotesComponent</code>, create a place to add a new note, as well as view other notes that have
+        been created.
+        In this task we'd like you to show off your creativity and design skills, so bonus points for extra features or
+        out-of-the-box ideas.</p>
     <p class="alert">You do not need a backend to save the data, save to the NotesService only.</p>
+
+    <div class="text_container">
+        <textarea [(ngModel)]="newNote" placeholder="What's going on today?" rows="4"></textarea>
+        <button (click)="addNote()">+</button>
+    </div>
+
+    <div class="notes_container">
+        <div *ngFor="let note of notes$ | async" class="note">
+            <span>{{getDate(note.date)}}</span>
+            <pre>{{note.text}}</pre>
+        </div>
+    </div>
 </div>

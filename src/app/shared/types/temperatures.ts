@@ -1,4 +1,4 @@
-export interface TemperatureResponse {
+export interface ITemperatureResponse {
   coord: Coord
   weather: Weather[]
   base: string
