@@ -1,7 +1,6 @@
 name: Deploy Angular app to GitHub Pages
 
 on:
-  # Ejecutar cuando haya un push en la rama master (o main)
   push:
     branches:
       - master
@@ -31,4 +30,4 @@ jobs:
         run: npm run build --prod
 
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/test-safeguard
+        run: npx angular-cli-ghpages --dir=dist/sfgp-developer-test
