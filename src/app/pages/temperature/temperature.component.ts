@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrl: './temperature.component.scss'
 })
 export class TemperatureComponent {
-
 }
