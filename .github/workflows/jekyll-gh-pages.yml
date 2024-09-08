@@ -30,4 +30,4 @@ jobs:
         run: npm run build --prod
 
       - name: Deploy to GitHub Pages
-        run: npx angular-cli-ghpages --dir=dist/sfgp-developer-test
+        run: npx angular-cli-ghpages --dir=dist/sfgp-developer-test --no-silent
