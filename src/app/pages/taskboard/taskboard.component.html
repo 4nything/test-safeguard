@@ -19,19 +19,19 @@
     <h3 class="list-title title-2">List 2</h3>
     <h3 class="list-title title-3">List 3</h3>
 
-    <div class="list list-1" [dragula]="list" [(dragulaModel)]="list1">
+    <div class="list list-1" [dragula]="list" [(dragulaModel)]="list1" id="list1">
         <app-taskboard-item *ngFor="let item of list1" [theme]="item.theme">
             {{ item.title }}
         </app-taskboard-item>
     </div>
 
-    <div class="list list-2" [dragula]="list" [(dragulaModel)]="list2">
+    <div class="list list-2" [dragula]="list" [(dragulaModel)]="list2" id="list2">
         <app-taskboard-item *ngFor="let item of list2" [theme]="item.theme">
             {{ item.title }}
         </app-taskboard-item>
     </div>
 
-    <div class="list list-3" [dragula]="list" [(dragulaModel)]="list3">
+    <div class="list list-3" [dragula]="list" [(dragulaModel)]="list3" id="list3">
         <app-taskboard-item *ngFor="let item of list3" [theme]="item.theme">
             {{ item.title }}
         </app-taskboard-item>
